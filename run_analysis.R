@@ -57,9 +57,23 @@ names(Y_merge) <- "activity"
 ## 4. Appropriately labels the data set with descriptive variable names. 
 #####
 
+names(subject_merge) <- "subject"
+final <- cbind(X_merge, Y_merge, subject_merge)
+# standarizing column names
+col_names <- names(final)
+col_names <- gsub("\\()","",col_names)
+names(final) <- col_names
 
 #####
 ## 5. From the data set in step 4, 
 ##    creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 #####
+
+# columns 67 and 68 are activity an subject.
+library(plyr)
+tidy_final <- ddply(final, .(activity, subject), function(x) colMeans(x[, 1:66]))
+write.table(tidy_final, file = "./tidy_final.txt")
+
+
+
 
