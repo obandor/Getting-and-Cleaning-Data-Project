@@ -17,4 +17,8 @@ The source code is an R script and consists of 5 steps:
 
 The result is the tidy_final.txt file.
 
+<<<<<<< HEAD
 The CodeBook.md file describes the variables, data, and transformations performed to achieve the result.
+=======
+The CodeBook.md file describes the variables, data, and transformations performed to achieve the result. 
+>>>>>>> da930a969087821ec4706e0c5ad77f770b754998
